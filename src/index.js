@@ -1,6 +1,6 @@
 import express from "express";
-import productRoutes from "./product.routes.js";
 import userRouter from "./user/user.router.js";
+import productRouter from "./product/product.router.js"
 import { logRequest } from "./middleware.js";
 import { errorResponder } from "./error.middleware.js";
 
@@ -9,7 +9,7 @@ const PORT = 3000;
 
 app.use(express.json());
 app.use(logRequest);
-app.use(productRoutes);
+app.use(productRouter);
 app.use(userRouter);
 app.use(errorResponder);
 
